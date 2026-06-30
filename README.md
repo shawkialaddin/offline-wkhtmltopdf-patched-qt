@@ -1,5 +1,17 @@
 # Offline replace wkhtmltopdf 0.12.6 → 0.12.6.1 (patched Qt)
 
+[![License: MIT](https://img.shields.io/github/license/shawkialaddin/offline-wkhtmltopdf-patched-qt?color=blue)](LICENSE)
+[![wkhtmltopdf](https://img.shields.io/badge/wkhtmltopdf-0.12.6.1%20patched%20Qt-orange)](https://github.com/wkhtmltopdf/packaging/releases/tag/0.12.6.1-3)
+[![Made with Bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg?logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
+[![Platform: Linux](https://img.shields.io/badge/platform-Linux-333?logo=linux&logoColor=white)](#)
+[![Airgapped](https://img.shields.io/badge/airgapped-friendly-success)](#)
+[![Distros](https://img.shields.io/badge/distros-Debian%20%7C%20Ubuntu%20%7C%20RHEL%20%7C%20Rocky%20%7C%20Alma-informational)](#)
+
+[![GitHub stars](https://img.shields.io/github/stars/shawkialaddin/offline-wkhtmltopdf-patched-qt?style=social)](https://github.com/shawkialaddin/offline-wkhtmltopdf-patched-qt/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/shawkialaddin/offline-wkhtmltopdf-patched-qt)](https://github.com/shawkialaddin/offline-wkhtmltopdf-patched-qt/commits/main)
+[![Repo size](https://img.shields.io/github/repo-size/shawkialaddin/offline-wkhtmltopdf-patched-qt)](https://github.com/shawkialaddin/offline-wkhtmltopdf-patched-qt)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/shawkialaddin/offline-wkhtmltopdf-patched-qt/pulls)
+
 Replaces an existing **wkhtmltopdf 0.12.6** (the distro package, built against an
 *unpatched* Qt — "reduced functionality") with the official **wkhtmltox 0.12.6.1
 patched-Qt** build on an **airgapped** server. No internet is touched on the target.
