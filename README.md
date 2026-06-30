@@ -46,20 +46,20 @@ Full runbook with every flag, fallbacks, and troubleshooting: **[STEPS.md](STEPS
 
 ```mermaid
 flowchart LR
-    subgraph ONLINE["🌐 Internet-connected box"]
+    subgraph ONLINE["Internet-connected box"]
         A["stage-download.sh"] --> B["Query GitHub release API<br/>(tag 0.12.6.1-3)"]
         B --> C["Download .deb / .rpm<br/>+ SHA256SUMS"]
-        C --> D["📦 wkhtmltox-offline-bundle.tar.gz"]
+        C --> D["wkhtmltox-offline-bundle.tar.gz"]
     end
 
     D -->|"scp / USB"| E
 
-    subgraph AIRGAP["🔒 Airgapped server (no internet)"]
+    subgraph AIRGAP["Airgapped server (no internet)"]
         E["install-offline.sh"] --> F["Detect distro / arch"]
         F --> G["Pick + checksum package"]
         G --> H["Remove old 0.12.6"]
         H --> I["Install new package<br/>(dpkg / rpm)"]
-        I --> J["✅ Verify: 0.12.6.1<br/>with patched qt"]
+        I --> J["Verify: 0.12.6.1<br/>with patched qt"]
     end
 ```
 
