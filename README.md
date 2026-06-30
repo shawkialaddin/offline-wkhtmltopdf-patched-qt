@@ -20,7 +20,7 @@ patched-Qt** build on an **airgapped** server. No internet is touched on the tar
 [`wkhtmltopdf/packaging`](https://github.com/wkhtmltopdf/packaging) repo. The
 patched-Qt build is what gives you full headers/footers, page breaks, forms, etc.
 
-## ⚡ Quick start
+## Quick start
 
 ```bash
 # 1) On an INTERNET-connected machine: stage the packages into a tarball
@@ -40,7 +40,7 @@ sudo ./install-offline.sh                 # auto-detects distro, verifies, insta
 wkhtmltopdf --version                      # → 0.12.6.1 (with patched qt)
 ```
 
-📖 Full runbook with every flag, fallbacks, and troubleshooting: **[STEPS.md](STEPS.md)**
+Full runbook with every flag, fallbacks, and troubleshooting: **[STEPS.md](STEPS.md)**
 
 ## 🔄 How it works
 
