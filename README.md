@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/header.png" alt="Offline wkhtmltopdf Patched Qt — replace 0.12.6 with 0.12.6.1 on airgapped servers" width="100%">
+</p>
+
 # Offline replace wkhtmltopdf 0.12.6 → 0.12.6.1 (patched Qt)
 
 [![License: MIT](https://img.shields.io/github/license/shawkialaddin/offline-wkhtmltopdf-patched-qt?color=blue)](LICENSE)
