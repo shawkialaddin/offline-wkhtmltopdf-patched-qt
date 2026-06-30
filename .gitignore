@@ -1,0 +1,5 @@
+wkhtmltox-offline-bundle/
+wkhtmltox-offline-bundle*.tar.gz*
+*.deb
+*.rpm
+.claude/
