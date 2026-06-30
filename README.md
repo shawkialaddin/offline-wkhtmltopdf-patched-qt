@@ -20,6 +20,49 @@ patched-Qt** build on an **airgapped** server. No internet is touched on the tar
 [`wkhtmltopdf/packaging`](https://github.com/wkhtmltopdf/packaging) repo. The
 patched-Qt build is what gives you full headers/footers, page breaks, forms, etc.
 
+## ⚡ Quick start
+
+```bash
+# 1) On an INTERNET-connected machine: stage the packages into a tarball
+git clone https://github.com/shawkialaddin/offline-wkhtmltopdf-patched-qt.git
+cd offline-wkhtmltopdf-patched-qt
+./stage-download.sh                       # → wkhtmltox-offline-bundle.tar.gz
+
+# 2) Copy the tarball to the AIRGAPPED server (scp / USB)
+scp wkhtmltox-offline-bundle.tar.gz user@airgapped-host:/tmp/
+
+# 3) On the AIRGAPPED server: extract and install (no internet used)
+tar -xzf /tmp/wkhtmltox-offline-bundle.tar.gz
+cd wkhtmltox-offline-bundle
+sudo ./install-offline.sh                 # auto-detects distro, verifies, installs
+
+# 4) Confirm
+wkhtmltopdf --version                      # → 0.12.6.1 (with patched qt)
+```
+
+📖 Full runbook with every flag, fallbacks, and troubleshooting: **[STEPS.md](STEPS.md)**
+
+## 🔄 How it works
+
+```mermaid
+flowchart LR
+    subgraph ONLINE["🌐 Internet-connected box"]
+        A["stage-download.sh"] --> B["Query GitHub release API<br/>(tag 0.12.6.1-3)"]
+        B --> C["Download .deb / .rpm<br/>+ SHA256SUMS"]
+        C --> D["📦 wkhtmltox-offline-bundle.tar.gz"]
+    end
+
+    D -->|"scp / USB"| E
+
+    subgraph AIRGAP["🔒 Airgapped server (no internet)"]
+        E["install-offline.sh"] --> F["Detect distro / arch"]
+        F --> G["Pick + checksum package"]
+        G --> H["Remove old 0.12.6"]
+        H --> I["Install new package<br/>(dpkg / rpm)"]
+        I --> J["✅ Verify: 0.12.6.1<br/>with patched qt"]
+    end
+```
+
 ## Two-step workflow
 
 ### 1. On an internet-connected machine — stage the packages
